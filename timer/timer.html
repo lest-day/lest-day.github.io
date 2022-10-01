@@ -51,9 +51,9 @@ font-size: .8em;
 
     function initializeClock(endtime, type) {
         if(type == "del"){
-            document.getElementById("topMessage").innerHTML = "本文將在以下時間後符合被刪除條件";
+            document.getElementById("topMessage").innerHTML = "本文将在以下时间后被删除";
         }else if(type == "ban"){
-            document.getElementById("topMessage").innerHTML = "本用戶直至以下時間被封禁";
+            document.getElementById("topMessage").innerHTML = "本用户直至以下时间被封禁";
         } else {
             var typetext = type.split("%20");
             document.getElementById("topMessage").innerHTML = typetext.join(" ");
