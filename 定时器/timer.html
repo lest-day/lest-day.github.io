@@ -13,7 +13,7 @@ font-size: .8em;
         </div>
         <div>
             <span class="hours">aN</span>
-            <div class="smalltext">時</div>
+            <div class="smalltext">时</div>
         </div>
         <div>
             <span class="minutes">aN</span>
@@ -81,16 +81,16 @@ font-size: .8em;
                 secondsSpan.style.color = "green";
 
                 if(type == "del"){
-                    document.getElementById("topMessage").innerHTML = "本文已經超過符合被刪除期限";
+                    document.getElementById("topMessage").innerHTML = "本文已经超过符合被删除期限";
                     document.getElementById("topMessage").style.color = "green";
                     document.getElementById("message").style.display = "none";
 
                 }else if(type == "ban"){
-                    document.getElementById("topMessage").innerHTML = "本用戶已經超過期限符合被解封"
+                    document.getElementById("topMessage").innerHTML = "本用户已经超过期限符合被解封"
                     document.getElementById("messsage").style.color = "green";
                     document.getElementById("message").style.display = "none";
                 } else {
-                    document.getElementById("topMessage").innerHTML = "本計時器已經到時間";
+                    document.getElementById("topMessage").innerHTML = "本计时器已经到时间了";
                     document.getElementById("messsage").style.color = "green";
                     document.getElementById("message").style.display = "none";
                 }
