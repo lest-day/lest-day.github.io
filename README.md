@@ -6,7 +6,7 @@
 > 你可以轻松通过计时器工具将计时器创建并且放置在Wikidot页面和论坛线程，来实现删除、封禁等不同的功能。
 
 
-> [职员帖文本生成器](https://lest-day.github.io/timer/timer-selector.html)
+> [职员帖文本生成器](https://lest-day.github.io/staff-post-text-generator/text-generator.html)
 > ---
 > 通过选择处理类型情况并且提供处理者的用户名和被处理者的用户名来生成准确和规范的职员帖文本，在复制后类型被处理者。
 
