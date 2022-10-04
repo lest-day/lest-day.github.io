@@ -11,7 +11,13 @@
     <h4>计时器类型</h4>
       
     <h4>开始时间</h4>
-      <input type="radio" name="sex" value="male">现在</input> <input type="radio" name="sex" value="male">稍后/其他</input> <input id="start-time" style="display:none" value="YYYY/MM/DD HH:MM:SS" />
+      <span>
+          <input type="radio" name="sex" value="male">现在
+          <input id="start-later" type="radio" name="start" value="later">
+          <label id="start-later-label" for="later">稍后/其他</label>
+          <input id="start-later-date" class="radio-text" type="date">
+          <input id="start-later-time" class="radio-text" type="time">
+        </span>
     <h4>执行时间</h4>
     
 <br><br><button id="copy">复制</button>
