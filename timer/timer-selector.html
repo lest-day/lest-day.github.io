@@ -9,7 +9,7 @@
     <hr>
     
     <h4>计时器类型</h4>
-      <input name="type" type="radio" value="del">删除
+      <input name="type" type="radio" checked="checked" value="del">删除
       <input name="type" type="radio" value="ban">封禁
       <input name="type" type="radio" value="generic">自定义
     <h4>计时原因</h4>
@@ -29,78 +29,31 @@
        </select>
     <h4>开始时间</h4>
       <span>
-          <input id="start selected" type="radio" name="start" value="male">现在
+          <input id="start selected" type="radio" name="start" checked="checked" value="now">现在
           <input id="start-later" type="radio" name="start" value="later"><label id="start-later-label" for="later">稍后/其他 </label><input id="start-later-date" class="radio-text" type="date"><input id="start-later-time" class="radio-text" type="time">
       </span>
     <h4>执行时间</h4>
-
+      <input checked="checked" name="execute" class="duration selected" type="radio">1 
+      <input name="execute" class="duration selected" checked="checked" type="radio">24 
+      <input name="execute" class="duration selected" type="radio">48 
+      <input name="execute" class="duration selected" type="radio">72 
+      <input name="execute" class="duration selected" type="radio">自定义 <input id="duration-time" value="5" type="number" />
 <p><span id="copyarea">
 [[iframe https://lest-day.github.io/timer/timer.html#?<i id="output"></i> style="width: 500px; height: 250px; border: 0;"]]
 <br><br>
 <span class="templates">未完成</span>
 <span class="templates" style="display:none">未完成</span>
 <span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
+<span class="templates" style="display:none">未完成</span>
 </span></p>
 <br><br><button id="copy">复制</button>
-<script>
-const templates = [];
- 
-const $timer = document.getElementById("select-timer");
-const $msg = document.getElementById("generic-msg");
-$timer.onchange = () => {
-  if ($timer.value == "generic")
-    $msg.classList.remove('hidden');
-  else
-    $msg.classList.add('hidden');
-}
-const $start = document.getElementsByClassName("start");
-const $startTime = document.getElementById("start-time");
-$startTime.value = new Date(Date.now()).toISOString().replace('T',' ').match(/[^.]+/);
-var startNow = true;
-[].forEach.call($start, (v,i)=>{
-    v.onclick = function(){
-    $start[i].classList.add('selected');
-    $start[1 - i].classList.remove('selected');
-    startNow = !i;
-    $startTime.style.display = startNow ? 'none' : '';
-  }
-});
-function startTime() {
-  return startNow ? Date.now() : Date.parse($startTime.value);
-}
-const $duration = document.getElementsByClassName("duration");
-const $durationTime = document.getElementById("duration-time");
-var durationSel = 0;
-[].forEach.call($duration, (v,i)=>{
-    v.onclick = function(){
-    $duration[durationSel].classList.remove('selected');
-    $duration[i].classList.add('selected');
-    durationSel = i;
-    $durationTime.style.display = durationSel == $duration.length - 1 ? '' : 'none';
-  }
-})
-const $templates = document.getElementsByClassName("templates");
-const $template = document.getElementById("template");
-$template.onchange=()=>{
-  for (var el of $templates)
-    el.style.display = 'none';
-  $templates[$template.value].style.display = '';
-}
-function tick(){
-document.getElementById("output").innerHTML = `time=${startTime() + 3600000 * [1,24,48,72,+$durationTime.value][durationSel]}&type=${$timer.value == "generic" ? $msg.value.replace(/ /g,'%20') : $timer.value}`
-requestAnimationFrame(tick);
-}
-tick()
-document.getElementById("copy").onclick = function(){
-        var textarea = document.createElement("textarea");
-        textarea.textContent = document.getElementById("copyarea").textContent;
-        textarea.style.position = "fixed";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-}
-</script>
     
     <hr>
     <p style="font-size:8px">此计时器工具适用于CC BY-SA 3.0授权协议，你可以在使用相同授权方式、署名并且遵守授权协议的情况下，任意修改、改作、复制甚至商用此计时器工具。</p>
