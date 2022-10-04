@@ -9,15 +9,14 @@
     <hr>
     
     <h4>计时器类型</h4>
-      
+      <input name="type" type="radio" value="del">删除
+      <input name="type" type="radio" value="ban">封禁
+      <input name="type" type="radio" value="generic">自定义
     <h4>开始时间</h4>
       <span>
-          <input type="radio" name="sex" value="male">现在
-          <input id="start-later" type="radio" name="start" value="later">
-          <label id="start-later-label" for="later">稍后/其他</label>
-          <input id="start-later-date" class="radio-text" type="date">
-          <input id="start-later-time" class="radio-text" type="time">
-        </span>
+          <input id="start selected" type="radio" name="start" value="male">现在
+          <input id="start-later" type="radio" name="start" value="later"><label id="start-later-label" for="later">稍后/其他 </label><input id="start-later-date" class="radio-text" type="date"><input id="start-later-time" class="radio-text" type="time">
+      </span>
     <h4>执行时间</h4>
     
 <br><br><button id="copy">复制</button>
