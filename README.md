@@ -1,13 +1,13 @@
 这里是[Github](https://github.com/lest-day)、[Wikidot](https://www.wikidot.com/user:info/lest-day/)用户lest-day的技术部门站点，用来存储其制作的工具
 
 
-> [blog博客](https://lest-day.github.io/blog/blog-main.html)
+> [blog博客](https://lest-day.github.io/blog/blog-main.html)|[备忘录](https://lest-day.github.io/blog/memo-main.html)
 > ---
-> Github、Wikidot用户lest-day的私人技术性博客站，这里记录了我的混合日记和新闻，欢迎大家来这里做客啊！
+> Github、Wikidot用户lest-day的私人技术性博客和备忘录站，这里记录了我的混合日记和新闻，欢迎大家来这里做客啊！
 
 > [计时选择器](https://lest-day.github.io/timer/timer-selector.html)|[计时器](https://lest-day.github.io/timer/timer.html)
 > ---
-> 你可以轻松通过计时器工具将计时器创建并且放置在Wikidot页面和论坛线程，来实现删除、封禁等不同的功能。
+> 你可以轻松的通过计时器工具将生成的计时器创建并且放置在Wikidot页面和论坛线程上，来实现计时删除、封禁等功能。
 
 > [职员帖文本生成器](https://lest-day.github.io/staff-post-text-generator/text-generator.html)
 > ---
