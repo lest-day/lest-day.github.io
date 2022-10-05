@@ -1,0 +1,13 @@
+/* 
+原 为Wikidot.com站点 内「RPC管理局」、「时间轴书店」站点的「Black Supremacy」版式主题
+现 修改图案为空白、修改以适配Github Page
+遵循CC BY-SA 3.0
+*/
+
+/* 基础引用 */
+@import url('https://timeline-bookstore.wikidot.com/component:theme/code/1')
+  
+/* 头部图标 */
+--header-icon: url('');
+
+/* 移植适配 */
