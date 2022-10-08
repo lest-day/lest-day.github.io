@@ -6,7 +6,7 @@
 > Github、Wikidot用户lest-day随记的个人技术性博客文章，提供给大家参考一下，欢迎大家来到站点看看博客文章！
 
 
-> [TLB-DB](https://lest-day.github.io/TLB-DB/main.html)
+> [TLB-DB](https://lest-day.github.io/TLB-DB/main.html)|[手动存储区](https://github.com/lest-day/lest-day.github.io/TLB-DB/manual-storage/)
 > ---
 > 这是Wikidot网站TLB的自动化存储+手动检查的备份工具组，用于提取维基数据的数据库，数据库在爬虫的帮助下知道更新。
 
