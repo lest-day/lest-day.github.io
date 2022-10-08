@@ -1,0 +1,303 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <title>Main - ScpperDB</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Le styles -->
+        <link href="/css/jquery-ui.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/spinner.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/img/favicon.gif" rel="shortcut icon" type="image/vnd.microsoft.icon">        <!-- Scripts -->   
+<!--        
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6072049512866896",
+    enable_page_level_ads: true
+  });
+</script>  
+-->
+        <script type="text/javascript" src="/js/date.format.js"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="/js/html5shiv.min.js"></script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="/js/respond.min.js"></script><![endif]-->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/js/scpper.js"></script>
+<script type="text/javascript">
+    //<!--
+    
+// Anonymous self-executing function not to clutter global scope with temporary stuff
+(function () {
+
+    function init()
+    {
+        $('#members').on('click', function() {window.location.assign('/users');});
+        $('#pages').on('click', function() {window.location.assign('/pages');});
+        $('#revisions').on('click', function() {window.location.assign('/revisions');});
+        $('#votes').on('click', function() {window.location.assign('/votes');});
+        $('#roundup-users').on('click', function() {window.location.assign('/2018/users');});
+        $('#roundup-pages').on('click', function() {window.location.assign('/2018/pages');});
+    }
+
+    $(document).ready(init);
+}());
+
+
+    //-->
+</script>       
+        <script type="text/javascript">
+        (function () {
+
+        function init()
+        {   
+            // Prepare search form
+            scpper.search.siteId = 530812;
+            scpper.search.registerSearchAutocomplete();
+            scpper.search.initSearchControl('.search-control');
+            // Adjust content to the height of top navbar
+            $(document).ready(function() {
+                var contentPlacement = $('.scpper-navbar').position().top + $('.scpper-navbar').height()+10;
+                $('body').css('margin-top', contentPlacement);
+            });
+        }
+
+         $(document).ready(init);
+
+        }()); 
+        </script>
+            </head>
+    <body style="margin-top: 110px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top scpper-navbar" role="navigation">
+    <div class="navbar-header">         
+        <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="ScpperDB" height="50px" _mstalt="10653006">
+            <span class="navbar-header-name">&nbsp;ScpperDB</span>
+        </a>
+    </div>    
+    <div class="collapse navbar-collapse">      
+        <ul class="nav navbar-nav">
+                                                                                <li class="dropdown ">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><font _mstmutation="1">Chinese branch </font><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                                                                                            <li>
+                            <a href="/select-site?siteId=66711">
+                                SCP Foundation                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=169125">
+                                Russian branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=464696">
+                                French branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=486864">
+                                Korean branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=530167">
+                                Italian branch                            </a>
+                        </li>
+                                                                                            <li class="active">
+                            <a href="/select-site?siteId=530812">
+                                Chinese branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=547203">
+                                Thai branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=560484">
+                                Spanish branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=578002">
+                                Japanese branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=647733">
+                                Polish branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=783633">
+                                Portuguese branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=836589">
+                                Vietnamese branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=1269857">
+                                German branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=1398197">
+                                Ukrainian branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=1427610">
+                                SCP International                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=2060442">
+                                Czech branch                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/select-site?siteId=3947998">
+                                Traditional Chinese branch                            </a>
+                        </li>
+                                    </ul>
+            </li>
+                                                                                                <li>
+                    <a href="/users">
+                        Users                    </a>
+                </li>
+                                                                                            <li class="dropdown ">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><font _mstmutation="1">Pages </font><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                                                                                            <li>
+                            <a href="/pages">
+                                Existing                            </a>
+                        </li>
+                                                                                            <li>
+                            <a href="/pages/deleted">
+                                Deleted                            </a>
+                        </li>
+                                    </ul>
+            </li>
+                                                                                                <li>
+                    <a href="/revisions">
+                        Revisions                    </a>
+                </li>
+                                                                                                <li>
+                    <a href="/votes">
+                        Votes                    </a>
+                </li>
+                                                                                                <li>
+                    <a href="/tags">
+                        Tags                    </a>
+                </li>
+                                                                                                <li>
+                    <a href="/activity">
+                        Activity                    </a>
+                </li>
+                                                                                                <li>
+                    <a href="/about">
+                        About                    </a>
+                </li>
+                            </ul>      
+    </div>
+    <form class="scpper-navbar-search" method="POST" role="search" action="/search">
+        <div class="input-group">
+            <input type="text" name="search-text" id="search-text" class="form-control search-control ui-autocomplete-input" placeholder="Page or user..." value="" autocomplete="off" _mstplaceholder="18037656">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default" aria-label="Go" _mstaria-label="1950585">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+            </span>
+        </div>
+    </form>      
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>    
+</nav>        
+        <div class="container">
+            <div class="row text-center bottom-buffer">        
+    <div class="col-sm-6 col-xs-8 col-sm-offset-3 col-xs-offset-2">                
+        <div class="row tile-row">                        
+            <div class="col-xs-12 tile-main" onclick="window.location.assign('https://scp-wiki-cn.wikidot.com')">
+                <h1>
+                    SCP基金会                </h1>
+                <span class="small-text">
+                    Updated 2022-10-07 12:42:07                </span>                    
+            </div>            
+        </div>
+        <div class="row tile-row">
+            <div class="col-sm-6 col-xs-12 tile-1">
+                <div class="tile background-green" id="members">
+                    <h2>
+                        <span>30 028</span>
+                        <span class="tile-whitespace"></span>
+                        <span>users</span>
+                    </h2>
+                    <ul class="list-unstyled tile-details">
+                        <li>5 018 active</li>
+                        <li>3 870 contributors</li>
+                        <li>1 785 authors</li>
+                    </ul>        
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 tile-2">
+                <div class="tile background-blue" id="pages">
+                    <h2>
+                        <span>21 965</span>
+                        <span class="tile-whitespace"></span>
+                        <span>pages</span>
+                    </h2>
+                    <ul class="list-unstyled tile-details">
+                        <li> 10 119 originals </li>
+                        <li> 11 846 translations </li>
+                    </ul>        
+                </div>
+            </div>
+        </div>
+        <div class="row tile-row">
+            <div class="col-sm-6 col-xs-12 tile-1">
+                <div class="tile background-red" id="votes">
+                    <h2>
+                        <span>529 669</span>
+                        <span class="tile-whitespace"></span>
+                        <span>votes</span>
+                    </h2>
+                    <ul class="list-unstyled tile-details">
+                        <li>484 324 positive</li>
+                        <li>42 955 negative</li>
+                    </ul>        
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 tile-2">
+                <div class="tile background-orange" id="revisions">
+                    <h2>
+                        <span>235 671</span>
+                        <span class="tile-whitespace"></span>
+                        <span>revisions</span>
+                    </h2>
+                </div>
+            </div>            
+        </div>
+        <div class="row text-center tile-patreon">
+            <span> If you enjoy ScpperDB please consider supporting it on Patreon. </span>
+            <div class="top-buffer-small">
+                <!-- Because Patreon's widget breaks the formatting -->
+                <a id="patreon-button" href="https://www.patreon.com/bePatron?u=3965575&amp;redirect_uri=http%3A%2F%2Fscpper.com%2F&amp;utm_medium=widget">
+                    <div id="patreon-button-content">
+                    Become a patron
+                    </div>
+                </a>                
+            </div>
+        </div>        
+    </div>
+</div>           
+        </div> <!-- /container -->                
+        <footer>
+            <hr>
+            <font _mstmutation="1"><span class="small-text" _mstmutation="1">
+                Website by Alexander "FiftyNine" Krivopalov
+            </span>                
+            <br _mstmutation="1">                
+            <span class="small-text" _mstmutation="1">
+                SCP Foundation and all related works were created by 
+                <a href="http://scp-wiki.net">SCP creative community</a>  
+                and are available under 
+                <a href="https://creativecommons.org/licenses/by-sa/3.0/deed">CC BY-SA 3.0 license</a>
+            </span></font>
+        </footer>
+        
+                	        
+    
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front search-autocomplete" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>
