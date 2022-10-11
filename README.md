@@ -6,11 +6,6 @@
 > Github、Wikidot用户lest-day随记的个人技术性博客文章，提供给大家参考一下，欢迎大家来到站点看看博客文章！
 
 
-> [TLB-DB备份区](https://github.com/lest-day/lest-day.github.io/tree/main/TLB-DB)
-> ---
-> 这是TLB维基的手动备份工具组区域，用于手动提取维基数据的数据库，由lest-day每周不定期做维护更新和清理操作。
-
-
 > [计时选择器](https://lest-day.github.io/timer/timer-selector.html)|[计时器](https://lest-day.github.io/timer/timer.html)
 > ---
 > 你可以轻松的通过计时器工具将生成的计时器创建并且放置在Wikidot页面和论坛线程上，来实现计时删除、封禁等功能。
