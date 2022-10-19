@@ -1,3 +1,189 @@
 <html>
-  
+  <head>
+  <style>
+    body {
+      font: 1em verdana,arial,helvetica,sans-serif;
+      color: #333;
+    }
+    button {
+      background-color: #ededed;
+      border: 1px solid #aaa;
+      color: #000;
+      font-size: 1em;
+      outline: 0;
+      box-shadow: 1px 1px 3px 0 rgba(153, 0, 17, .75);
+      margin: 5px;
+    }
+    button:hover,
+    button:focus {
+      background-color: #DDD;
+      color: #000;
+      border-radius: 5px;
+    }
+    .button-after {
+      position: absolute;
+      background: white;
+      border: 1px solid black;
+      color: black;
+      padding: 0.5em;
+      pointer-events: none;
+      margin-left: 15px;
+      animation: .75s linear copied;
+      border-radius: 5px;
+      display: none;
+    }
+    label {
+      margin: 5px 5px 5px 0;
+    }
+    textarea {
+      margin: 10px 0 25px;
+      width: 95%;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      color: #272727;
+      font-size: 1.1em;
+      padding: 5px;
+      outline: 0;
+    }
+    #singular {
+      margin-top: 15px;
+      margin-left: 0;
+    }
+    #plural {
+      margin-top: 15px;
+      margin-left: 15px;
+    }
+    fieldset {
+      display: inline-block;
+      padding: 0 20px 20px;
+    }
+    legend {
+      padding: 5px 10px;
+    }
+
+    @keyframes copied {
+      0% {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-15px);
+        opacity: 0;
+      }
+    }
+    @media (max-width: 415px) {
+      .button-after {
+        margin-left: -100px;
+      }
+    }
+  </style>
+  <script>
+// 变量
+    var focText = 'none'; // 正在选择哪个文本区域
+    var singular = false; // 如果是单数、复数或N/A
+
+// 单数
+    const sing = [` `];
+
+// 复数
+    const plur = [` `];
+
+// 所有未编号的结束文本
+    const nonum = [` `];
+
+// 事件处理程序
+   window.onload = function() { // 用默认文本填充文本区域
+     textUpdate();
+   };
+
+// 功能
+   function copyText() { // 选择、复制和取消选择文本区域的内容
+     document.getElementById(focText).select();
+     document.execCommand("copy");
+     if (window.getSelection) {
+       window.getSelection().removeAllRanges();
+     } else if (document.selection) {
+       document.selection.empty();
+     };
+     document.getElementById(focText + "AfterBtn").style.display = "inline-block";
+
+     setTimeout(function() {
+       document.getElementById(focText + "AfterBtn").style.display = "";
+     }, 740);
+   };
+
+   function textUpdate() { // 应用对预设所做的任何更改
+     var x = document.querySelector('#users').value;
+     var areas = document.querySelectorAll('textarea:not(.exception)');
+     var exc = document.getElementsByClassName('exception');
+     var i;
+
+     if (singular === false) { // default
+       for (i = 0; i < areas.length; i++) {
+         areas[i].innerHTML = 'Hello, this is [[*user ' + x + plur[i];
+       }
+     } else {
+       for (i = 0; i < areas.length; i++) {
+         areas[i].innerHTML = 'Hello, this is [[*user ' + x + sing[i];
+       }
+     };
+     for (i = 0; i < exc.length; i++) {
+       exc[i].innerHTML = 'Hello, this is [[*user ' + x + nonum[i];
+     }
+   }
+  </script>
+</head>
+<body>
+  <fieldset>
+    <legend>基础设置</legend>
+
+    <label for="users">处理者</label>
+
+    <select name="users" id="users" onchange="textUpdate();">
+      <option value="Tortoise God]]，TLB的管理员">Tortoise God</option>
+      <option value="lest-day]]，TLB的管理员">lest-day</option>
+      <option value="hatoyama_kumiko]]，TLB的管理员">hatoyama_kumiko</option>
+      <option value="GTryobe]]，TLB的管理员">GTryobe</option>
+      <option value="Alice schach]]，TLB的管理员">Alice schach</option>
+      <option value="Area35_zt]]，TLB的版主">Area35_zt</option>
+    </select>
+
+    <br>
+
+    <input type="radio" name="number" id="singular" onclick="singular = true; textUpdate();">
+    <label for="singular">Singular</label>
+
+    <input type="radio" name="number" id="plural" onclick="singular = false; textUpdate();" checked>
+    <label for="plural">Plural</label>
+  </fieldset>
+
+  <br>
+  <br>
+
+  <label for="invalid">Invalid Tagging</label>
+  <button name="invalid" id="invalidBtn" onclick="focText = 'invalid'; copyText()">复制文本</button><span id="invalidAfterBtn" class="button-after">已复制！</span>
+  <br>
+  <textarea id="invalid" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
+
+  <br>
+
+  <label for="incomplete">Incomplete Tagging</label><button id="incompleteBtn" onclick="focText = 'incomplete'; copyText()">复制文本</button><span id="incompleteAfterBtn" class="button-after">已复制！</span>
+  <br>
+  <textarea id="incomplete" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
+
+  <br>
+
+  <label for="both">无效/不完整标签</label><button id="bothBtn" onclick="focText = 'both'; copyText()">复制文本</button><span id="bothAfterBtn" class="button-after">已复制！</span>
+  <br>
+  <textarea id="both" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
+
+  <br>
+
+  <label for="cd">C&D</label><button id="cdBtn" onclick="focText = 'cd'; copyText()">复制文本</button><span id="cdAfterBtn" class="button-after">已复制！</span>
+  <br>
+  <textarea id="cd" class="exception" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
+  </body>
 </html>
