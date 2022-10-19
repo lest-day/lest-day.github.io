@@ -1,4 +1,5 @@
 <html>
+  <head>
   <style type="text/css">
   /* 版式主题-以兼容Wikidot的CSS */
         @import url(http://d3g0gp89917ko0.cloudfront.net/v--291054f06006/common--theme/base/css/style.css);
@@ -36,6 +37,12 @@
     }
     }
    </style>
+  <script>
+   var username
+   elem = document.getElementById("username"); 
+   elem.innerHTML = username; 
+   </script>
+</head>
    <fieldset>
     <legend>基础设置</legend>
     <label for="processor">处理者：</label>
@@ -47,12 +54,16 @@
       <option value="[[*user GTryobe]]，是TLB的管理员">GTryobe</option>
       <option value="[[*user Alice schach]]，是TLB的管理员">Alice schach</option>
       <option value="[[*user Area35_zt]]，是TLB的版主">Area35_zt</option>
-    </select>   <label for="processor">被处理者：</label><input type="test" name="firstname">
+    </select>   <label for="processed">被处理者：</label><input type="test" name="username" id="username">
   </fieldset>
   
   <br>   
   
-<textarea rows="10" cols="30">
-我是一个文本框。
-</textarea>
+<br><div style="padding:1em;border:1px solid black;width:61.6%;";>
+   <i id="username"></i>，您好!
+  </div>
+   
+<br><div style="padding:1em;border:1px solid black;width:61.6%;";>
+   <i id="username"></i>，您好!
+  </div>
 </html>
