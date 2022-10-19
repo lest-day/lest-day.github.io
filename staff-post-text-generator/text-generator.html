@@ -1,42 +1,17 @@
-<head>
-  <style>
+<html>
+  <style type="text/css">
+  /* 版式主题-以兼容Wikidot的CSS */
+        @import url(http://d3g0gp89917ko0.cloudfront.net/v--291054f06006/common--theme/base/css/style.css);
+ /* 版式主题-以兼容站点的CSS（可留空） */
+        @import url();
+  /* 内容框设置与其他设置 */
     body {
       font: 1em verdana,arial,helvetica,sans-serif;
       color: #333;
     }
-    button {
-      background-color: #ededed;
-      border: 1px solid #aaa;
-      color: #000;
-      font-size: 1em;
-      outline: 0;
-      box-shadow: 1px 1px 3px 0 rgba(153, 0, 17, .75);
-      margin: 5px;
-    }
-    button:hover,
-    button:focus {
-      background-color: #DDD;
-      color: #000;
-      border-radius: 5px;
-    }
-    .button-after {
-      position: absolute;
-      background: white;
-      border: 1px solid black;
-      color: black;
-      padding: 0.5em;
-      pointer-events: none;
-      margin-left: 15px;
-      animation: .75s linear copied;
-      border-radius: 5px;
-      display: none;
-    }
-    label {
-      margin: 5px 5px 5px 0;
-    }
     textarea {
       margin: 10px 0 25px;
-      width: 95%;
+      width: 85%;
       background-color: #f5f5f5;
       border: 1px solid #ccc;
       color: #272727;
@@ -59,116 +34,25 @@
     legend {
       padding: 5px 10px;
     }
-
-    @keyframes copied {
-      0% {
-        transform: translateY(15px);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-15px);
-        opacity: 0;
-      }
     }
-    @media (max-width: 415px) {
-      .button-after {
-        margin-left: -100px;
-      }
-    }
-  </style>
-  <script>
-// 变量
-    var focText = 'none'; // 正在选择哪个文本区域
-    var singular = false; // 如果是单数、复数或N/A
-
-// 单数
-    const sing = [` `];
-
-// 复数
-    const plur = [` 11`];
-
-// 所有未编号的结束文本
-    const nonum = [` 11`];
-
-// 事件处理程序
-   window.onload = function() { // 用默认文本填充文本区域
-     textUpdate();
-   };
-
-// 功能
-   function copyText() { // 选择、复制和取消选择文本区域的内容
-     document.getElementById(focText).select();
-     document.execCommand("copy");
-     if (window.getSelection) {
-       window.getSelection().removeAllRanges();
-     } else if (document.selection) {
-       document.selection.empty();
-     };
-     document.getElementById(focText + "AfterBtn").style.display = "inline-block";
-
-     setTimeout(function() {
-       document.getElementById(focText + "AfterBtn").style.display = "";
-     }, 740);
-   };
-
-   function textUpdate() { // 应用对预设所做的任何更改
-     var x = document.querySelector('#users').value;
-     var areas = document.querySelectorAll('textarea:not(.exception)');
-     var exc = document.getElementsByClassName('exception');
-     var i;
-
-     if (singular === false) { // default
-       for (i = 0; i < areas.length; i++) {
-         areas[i].innerHTML = '您好！我是[[*user ' + x + plur[i];
-       }
-     } else {
-       for (i = 0; i < areas.length; i++) {
-         areas[i].innerHTML = '您好！我是[[*user ' + x + sing[i];
-       }
-     };
-     for (i = 0; i < exc.length; i++) {
-       exc[i].innerHTML = '您好！我是[[*user ' + x + nonum[i];
-     }
-   }
-  </script>
-</head>
-<body>
-  <fieldset>
+   </style>
+   <fieldset>
     <legend>基础设置</legend>
-
-    <label for="users">处理者</label>
-
-    <select name="users" id="users" onchange="textUpdate();">
-      <option value="Tortoise God]]，TLB的管理员">Tortoise God</option>
-      <option value="lest-day]]，TLB的管理员">lest-day</option>
-      <option value="hatoyama_kumiko]]，TLB的管理员">hatoyama_kumiko</option>
-      <option value="GTryobe]]，TLB的管理员">GTryobe</option>
-      <option value="Alice schach]]，TLB的管理员">Alice schach</option>
-      <option value="Area35_zt]]，TLB的版主">Area35_zt</option>
-    </select>
-
-    <br>
-
- 
+    <label for="processor">处理者：</label>
+    <select name="processor" id="processor" onchange="textUpdate();">
+      <option value="[[*user Processor-Name]]，是TLB的工作人员/运营人员/主持人/管理员">--未定义/其他--</option>
+      <option value="[[*user Tortoise God]]，是TLB的管理员">Tortoise God</option>
+      <option value="[[*user lest-day]]，是TLB的管理员">lest-day</option>
+      <option value="[[*uservhatoyama_kumiko]]，是TLB的管理员">hatoyama_kumiko</option>
+      <option value="[[*user GTryobe]]，是TLB的管理员">GTryobe</option>
+      <option value="[[*user Alice schach]]，是TLB的管理员">Alice schach</option>
+      <option value="[[*user Area35_zt]]，是TLB的版主">Area35_zt</option>
+    </select>   <label for="processor">被处理者：</label><input type="test" name="firstname">
   </fieldset>
-
-  <br>
-  <br>
-
-  <label for="invalid">无效标签</label>
-  <button name="invalid" id="invalidBtn" onclick="focText = 'invalid'; copyText()">复制文本</button><span id="invalidAfterBtn" class="button-after">已复制！</span>
-  <br>
-  <textarea id="invalid" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
-
-  <br>
-
-  <label for="incomplete">标签不完整</label><button id="incompleteBtn" onclick="focText = 'incomplete'; copyText()">复制文本</button><span id="incompleteAfterBtn" class="button-after">已复制！</span>
-  <br>
-  <textarea id="incomplete" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
-
-  <br>
-
-</body>
+  
+  <br>   
+  
+<textarea rows="10" cols="30">
+我是一个文本框。
+</textarea>
+</html>
