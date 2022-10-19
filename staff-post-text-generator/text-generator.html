@@ -1,5 +1,4 @@
-<html>
-  <head>
+<head>
   <style>
     body {
       font: 1em verdana,arial,helvetica,sans-serif;
@@ -89,10 +88,10 @@
     const sing = [` `];
 
 // 复数
-    const plur = [` `];
+    const plur = [` 11`];
 
 // 所有未编号的结束文本
-    const nonum = [` `];
+    const nonum = [` 11`];
 
 // 事件处理程序
    window.onload = function() { // 用默认文本填充文本区域
@@ -123,15 +122,15 @@
 
      if (singular === false) { // default
        for (i = 0; i < areas.length; i++) {
-         areas[i].innerHTML = 'Hello, this is [[*user ' + x + plur[i];
+         areas[i].innerHTML = '您好！我是[[*user ' + x + plur[i];
        }
      } else {
        for (i = 0; i < areas.length; i++) {
-         areas[i].innerHTML = 'Hello, this is [[*user ' + x + sing[i];
+         areas[i].innerHTML = '您好！我是[[*user ' + x + sing[i];
        }
      };
      for (i = 0; i < exc.length; i++) {
-       exc[i].innerHTML = 'Hello, this is [[*user ' + x + nonum[i];
+       exc[i].innerHTML = '您好！我是[[*user ' + x + nonum[i];
      }
    }
   </script>
@@ -153,37 +152,23 @@
 
     <br>
 
-    <input type="radio" name="number" id="singular" onclick="singular = true; textUpdate();">
-    <label for="singular">Singular</label>
-
-    <input type="radio" name="number" id="plural" onclick="singular = false; textUpdate();" checked>
-    <label for="plural">Plural</label>
+ 
   </fieldset>
 
   <br>
   <br>
 
-  <label for="invalid">Invalid Tagging</label>
+  <label for="invalid">无效标签</label>
   <button name="invalid" id="invalidBtn" onclick="focText = 'invalid'; copyText()">复制文本</button><span id="invalidAfterBtn" class="button-after">已复制！</span>
   <br>
   <textarea id="invalid" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
 
   <br>
 
-  <label for="incomplete">Incomplete Tagging</label><button id="incompleteBtn" onclick="focText = 'incomplete'; copyText()">复制文本</button><span id="incompleteAfterBtn" class="button-after">已复制！</span>
+  <label for="incomplete">标签不完整</label><button id="incompleteBtn" onclick="focText = 'incomplete'; copyText()">复制文本</button><span id="incompleteAfterBtn" class="button-after">已复制！</span>
   <br>
   <textarea id="incomplete" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
 
   <br>
 
-  <label for="both">无效/不完整标签</label><button id="bothBtn" onclick="focText = 'both'; copyText()">复制文本</button><span id="bothAfterBtn" class="button-after">已复制！</span>
-  <br>
-  <textarea id="both" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
-
-  <br>
-
-  <label for="cd">C&D</label><button id="cdBtn" onclick="focText = 'cd'; copyText()">复制文本</button><span id="cdAfterBtn" class="button-after">已复制！</span>
-  <br>
-  <textarea id="cd" class="exception" rows="4" onfocus="this.rows = '15';" onblur="this.rows = '4';"></textarea>
-  </body>
-</html>
+</body>
